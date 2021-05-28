@@ -8,7 +8,9 @@
     </body>
 </html>
 <?php
+    extract($_POST);
 
+    system('dir');
     $text = $_GET['text'];
 
     echo $text;

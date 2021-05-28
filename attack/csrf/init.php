@@ -1,8 +1,8 @@
 <?php
 include ("../dbconnect.php");
 
-mysqli_query($conn, "DROP TABLE board") or die(mysqli_error($conn));
-mysqli_query($conn, "DROP TABLE user") or die(mysqli_error($conn));
+//mysqli_query($conn, "DROP TABLE board") or die(mysqli_error($conn));
+//mysqli_query($conn, "DROP TABLE user") or die(mysqli_error($conn));
 
 mysqli_query($conn, "CREATE TABLE user (
         user_ID INT NOT NULL AUTO_INCREMENT,

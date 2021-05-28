@@ -23,9 +23,15 @@
             exit;
         }
         */
+      $text = $_POST['text'];
+      $pat = array("/</", "/>/", "aa");
+      $rep = array("&lt", "&gt", "bb");
+
+      $text = preg_replace($pat, $rep, $text);
+
         $fp = fopen($file_path, 'w');
         flock($fp, LOCK_EX);
-        fwrite($fp, $_POST['text']  .chr(13).chr(10), strlen($_POST['text']));
+        fwrite($fp, $text  .chr(13).chr(10), strlen($_POST['text']));
         flock($fp, LOCK_UN);
         fclose($fp);
         header("Refresh:0");
